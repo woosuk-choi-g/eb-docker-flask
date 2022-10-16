@@ -18,7 +18,7 @@ jobs:
     steps:
       - 
         name: 체크아웃
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       - 
         name: ECR 로그인
         id: login-ecr
