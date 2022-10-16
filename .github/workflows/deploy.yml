@@ -42,7 +42,7 @@ jobs:
           tags: ${{ steps.login-ecr.outputs.registry }}/${{ inputs.ECR_REPOSITORY }}:${{ inputs.IMAGE_TAG }}
           # type=gha 는 실험적인 기능임 ( https://github.com/moby/buildkit#github-actions-cache-experimental )
           cache-from: type=gha
-          cahce-to: type=gha,mode=max
+          cache-to: type=gha,mode=max
           # ECR 은 cache export 를 지원하지않음 ( https://github.com/aws/containers-roadmap/issues/876 )
           # cache-from: type=registry,ref=${{ steps.login-ecr.outputs.registry }}/${{ inputs.ECR_REPOSITORY }}:buildcache
           # cache-to: type=registry,ref=${{ steps.login-ecr.outputs.registry }}/${{ inputs.ECR_REPOSITORY }}:buildcache,mode=max
