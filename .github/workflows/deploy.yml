@@ -12,6 +12,7 @@ on:
         description: 도커 이미지 태그
         type: string
         required: true
+run-name: build and push ${{ inputs.ECR_REPOSITORY }}:${{ inputs.IMAGE_TAG }}
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
