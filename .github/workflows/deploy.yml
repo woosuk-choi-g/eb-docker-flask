@@ -21,23 +21,35 @@ jobs:
     runs-on: ubuntu-latest
     needs: [suc1, suc2]
     if: ${{ success() }}
+    steps:
+      - run: exit 0
   comb2:
     runs-on: ubuntu-latest
     needs: [suc1, fail1]
     if: ${{ success() }}
+    steps:
+      - run: exit 0
   comb3:
     runs-on: ubuntu-latest
     needs: [fail1, fail2]
     if: ${{ success() }}
+    steps:
+      - run: exit 0
   comb4:
     runs-on: ubuntu-latest
     needs: [suc1, suc2]
     if: ${{ failure() }}
+    steps:
+      - run: exit 0
   comb5:
     runs-on: ubuntu-latest
     needs: [suc1, fail1]
     if: ${{ failure() }}
+    steps:
+      - run: exit 0
   comb6:
     runs-on: ubuntu-latest
     needs: [fail1, fail2]
     if: ${{ failure() }}
+    steps:
+      - run: exit 0
