@@ -17,3 +17,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
+  comb1:
+    runs-on: ubuntu-latest
+    needs: [suc1, suc2]
+    if: ${{ success() }}
+  comb2:
+    runs-on: ubuntu-latest
+    needs: [suc1, fail1]
+    if: ${{ success() }}
+  comb3:
+    runs-on: ubuntu-latest
+    needs: [fail1, fail2]
+    if: ${{ success() }}
+  comb4:
+    runs-on: ubuntu-latest
+    needs: [suc1, suc2]
+    if: ${{ failure() }}
+  comb5:
+    runs-on: ubuntu-latest
+    needs: [suc1, fail1]
+    if: ${{ failure() }}
+  comb6:
+    runs-on: ubuntu-latest
+    needs: [fail1, fail2]
+    if: ${{ failure() }}
