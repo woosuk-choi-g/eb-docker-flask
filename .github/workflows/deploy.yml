@@ -53,3 +53,7 @@ jobs:
     if: ${{ failure() }}
     steps:
       - run: exit 0
+  ls:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ls -Alh
