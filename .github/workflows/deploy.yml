@@ -1,6 +1,17 @@
 name: deploy to eb
 on: workflow_dispatch
 jobs:
+  
+  t1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo ${{ 'equals' == 'equals' && 'e' || 'no' }}
+          echo ${{ 'equals' == 'not equals' && 'e' || 'no' }}
+          echo ${{ 'equals' == 'not equals' && 'e1'
+            || 'equals' == 'not equals' && 'e2'
+            || 'equals' == 'not equals' && 'e3'
+            || 'no3'}}
   suc1:
     runs-on: ubuntu-latest
     steps:
