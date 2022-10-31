@@ -12,6 +12,14 @@ jobs:
             || 'equals' == 'not equals' && 'e2'
             || 'equals' == 'not equals' && 'e3'
             || 'no3'}}
+          echo ${{ 'equals' == 'not equals' && 'e1'
+            || 'equals' == 'equals' && 'e2'
+            || 'equals' == 'not equals' && 'e3'
+            || 'no3'}}
+          echo ${{ ('equals' == 'not equals' || 'equals' == 'equals') && 'e1'
+            || 'equals' == 'equals' && 'e2'
+            || 'equals' == 'not equals' && 'e3'
+            || 'no3'}}
   suc1:
     runs-on: ubuntu-latest
     steps:
